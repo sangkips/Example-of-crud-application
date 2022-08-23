@@ -1,0 +1,29 @@
+<h1>Projects</h1>
+
+<table>
+    <thead>
+    <tr>
+
+        <th>Title</th>
+        <th>Description</th>
+        <th>Action</th>
+        <th>Action</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for project in projects %}
+    <tr>
+
+        <td>{{project.title }}</td>
+        <td>{{project.description }}</td>
+        <td><a href="{% url 'create-file' %}">Create</a></td>
+        <td><a href="{% url 'update-file' project.id %}">Edit</a></td>
+        <td><a href="{% url 'delete-file' project.id %}">Delete</a></td>
+
+
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
